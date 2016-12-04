@@ -1,5 +1,6 @@
 package register;
 
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -11,12 +12,14 @@ import java.sql.Statement;
 public class DatabaseHelper {
 
     //public static  Connection connection=null;
+    //Class.forName("org.sqlite.JDBC");
 
-    public static boolean isDatabseAvilaable()
-    {
+
+    public static boolean isDatabseAvilaable() throws ClassNotFoundException {
+        Class.forName("org.sqlite.JDBC");
         Connection connection=null;
         try {
-            connection=DriverManager.getConnection("/home/sabbir/snl.db");
+            connection=DriverManager.getConnection("jdbc:sqlite:/home/sabbir/snl.db");
            /* Statement statement=connection.createStatement();
             statement.setQueryTimeout(30);*/
             return true;

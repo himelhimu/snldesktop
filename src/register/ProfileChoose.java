@@ -1,6 +1,8 @@
 package register;
 
+import com.jfoenix.controls.JFXButton;
 import javafx.animation.FadeTransition;
+import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -30,6 +32,8 @@ public class ProfileChoose implements Initializable {
     @FXML
     public ImageView doctorImage,nurseImage,fwvImage,sacmoImage;
     @FXML
+    private JFXButton logInButton;
+    @FXML
     private AnchorPane root;
 
     public static AnchorPane rootp;
@@ -43,7 +47,7 @@ public class ProfileChoose implements Initializable {
         }
         rootp=root;
 
-        rootp.addEventHandler(MouseEvent.MOUSE_CLICKED,event -> {
+        /*rootp.addEventHandler(MouseEvent.MOUSE_CLICKED,event -> {
             //loadRegister(event);
             Parent root= null;
             try {
@@ -55,14 +59,43 @@ public class ProfileChoose implements Initializable {
             } catch (IOException e) {
                 e.printStackTrace();
             }
-        });
-
-    }
-
-    private void loadRegister(Event event) {
+        });*/
 
 
     }
+
+    @FXML
+    private void loginPage(ActionEvent event){
+
+        try {
+                Parent root=null;
+                root=FXMLLoader.load(getClass().getResource("login.fxml"));
+                Scene scene=new Scene(root);
+                Stage loginStage=(Stage) ((Node) event.getSource()).getScene().getWindow();
+                loginStage.setScene(scene);
+                loginStage.show();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+    }
+
+   @FXML
+   private void register(ActionEvent event){
+       try {
+            //Parent root=null;
+           root=FXMLLoader.load(getClass().getResource("registration.fxml"));
+           Scene registrationScene=new Scene(root);
+           Stage registrationStage=(Stage) ((Node) event.getSource()).getScene().getWindow();
+           registrationStage.setScene(registrationScene);
+           registrationStage.setMaximized(true);
+           //registrationStage.setFullScreen(true);
+           registrationStage.show();
+       } catch (IOException e) {
+           e.printStackTrace();
+       }
+   }
+
+
 
     private void loadSPlashScreen() {
         try{

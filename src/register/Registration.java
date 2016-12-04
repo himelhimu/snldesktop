@@ -8,10 +8,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.layout.AnchorPane;
 
 import java.net.URL;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 import java.util.ResourceBundle;
 
 /**
@@ -22,10 +19,10 @@ public class Registration implements Initializable {
     private JFXButton buttonRegister;
 
     @FXML
-    private JFXPasswordField password,confirmPassword;
+    private JFXPasswordField textPassword,textConfirmPassword;
 
     @FXML
-    private JFXTextField textName,textVillage,textPo,textPhone,textEmail,textAddress,textDistrict,textPassword;
+    private JFXTextField textName,textVillage,textPo,textMobile,textEmail,textAddress,textDistrict;
 
     @FXML
     private AnchorPane rootRegistration;
@@ -39,14 +36,18 @@ public class Registration implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
-        name=textName.getText().toString();
-        district=textDistrict.getText().toString();
-        userPassword=password.getText().toLowerCase();
+        name=textName.getText().trim();
+        district=textDistrict.getText().trim();
+        userPassword=textConfirmPassword.getText().toLowerCase();
 
         buttonRegister.setOnMouseClicked(event -> {
-            if (DatabaseHelper.isDatabseAvilaable())
-            {
-                registerUser();
+            try {
+                if (DatabaseHelper.isDatabseAvilaable())
+                {
+                    registerUser();
+                }
+            } catch (ClassNotFoundException e) {
+                e.printStackTrace();
             }
 
         });
@@ -71,11 +72,13 @@ public class Registration implements Initializable {
 
     private void insertIntoDatabase() throws SQLException{
          Connection connection=null;
+        connection= DriverManager.getConnection("jdbc:sqlite:/home/sabbir/snl.db");
          PreparedStatement preparedStatement=null;
 
         Statement statement=connection.createStatement();
         statement.setQueryTimeout(30);
-        statement.executeUpdate("create table if user(userName string,password string)");
+        //preparedStatement=connection
+        statement.executeUpdate("create table user(userName string,password string)");
         preparedStatement=connection.prepareStatement(INSERT_INTO_TABLE);
 
         preparedStatement.setString(1,name);
