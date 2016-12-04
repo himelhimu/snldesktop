@@ -8,7 +8,7 @@
 <?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane fx:id="rootRegistration" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.112-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="register.">
+<AnchorPane fx:id="rootRegistration" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.112-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="register.Registration">
    <children>
       <JFXTextField fx:id="textName" labelFloat="true" layoutX="14.0" layoutY="14.0" maxWidth="236.0" minWidth="179.0" prefHeight="32.0" prefWidth="179.0" promptText="Name" />
       <JFXTextField fx:id="textAddress" labelFloat="true" layoutX="14.0" layoutY="46.0" maxWidth="220.0" minWidth="179.0" prefHeight="32.0" prefWidth="179.0" promptText="Address" />
@@ -16,8 +16,8 @@
       <JFXTextField fx:id="textPo" layoutX="18.0" layoutY="121.0" maxWidth="171.0" minWidth="171.0" prefHeight="32.0" prefWidth="171.0" promptText="P.O" />
       <JFXTextField fx:id="textDistrict" layoutX="10.0" layoutY="160.0" maxWidth="179.0" minWidth="179.0" prefHeight="32.0" prefWidth="179.0" promptText="District" />
       <JFXButton fx:id="buttonRegister" layoutX="437.0" layoutY="332.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="159.0" text="Register" />
-      <JFXPasswordField fx:id="textDivision" layoutX="14.0" layoutY="200.0" maxWidth="179.0" minWidth="179.0" prefHeight="32.0" prefWidth="179.0" promptText="Division" />
-      <JFXPasswordField fx:id="textMobile" layoutX="14.0" layoutY="232.0" maxWidth="179.0" minWidth="179.0" prefHeight="32.0" prefWidth="179.0" promptText="Mobile" />
+      <JFXPasswordField fx:id="password" layoutX="14.0" layoutY="200.0" maxWidth="179.0" minWidth="179.0" prefHeight="32.0" prefWidth="179.0" promptText="Division" />
+      <JFXPasswordField fx:id="confirmPassword" layoutX="14.0" layoutY="232.0" maxWidth="179.0" minWidth="179.0" prefHeight="32.0" prefWidth="179.0" promptText="Mobile" />
       <JFXRadioButton layoutX="30.0" layoutY="295.0" mnemonicParsing="false" text="Male">
          <toggleGroup>
             <ToggleGroup fx:id="Female" />

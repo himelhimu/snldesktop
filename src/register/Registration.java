@@ -1,6 +1,7 @@
 package register;
 
 import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -21,14 +22,17 @@ public class Registration implements Initializable {
     private JFXButton buttonRegister;
 
     @FXML
-    private JFXTextField textName,textVillage,textPo,textPhone,textEmail,textAddress,textDivision,textDistrict,textPassword;
+    private JFXPasswordField password,confirmPassword;
+
+    @FXML
+    private JFXTextField textName,textVillage,textPo,textPhone,textEmail,textAddress,textDistrict,textPassword;
 
     @FXML
     private AnchorPane rootRegistration;
 
 
 
-   public String name,district,postOffice,phone,email,address,division,village,password;
+   public String name,district,postOffice,phone,email,address,division,village,userPassword;
 
     public static final String INSERT_INTO_TABLE="insert into user"+"(userName,password) values"+"(?,?)";
 
@@ -37,7 +41,7 @@ public class Registration implements Initializable {
 
         name=textName.getText().toString();
         district=textDistrict.getText().toString();
-        password=textPassword.getText().toLowerCase();
+        userPassword=password.getText().toLowerCase();
 
         buttonRegister.setOnMouseClicked(event -> {
             if (DatabaseHelper.isDatabseAvilaable())
@@ -75,7 +79,7 @@ public class Registration implements Initializable {
         preparedStatement=connection.prepareStatement(INSERT_INTO_TABLE);
 
         preparedStatement.setString(1,name);
-        preparedStatement.setString(2,password);
+        preparedStatement.setString(2,userPassword);
 
         preparedStatement.executeUpdate();
         System.out.println("Inserted");

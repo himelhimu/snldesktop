@@ -43,7 +43,7 @@ public class ProfileChoose implements Initializable {
         }
         rootp=root;
 
-        root.addEventHandler(MouseEvent.MOUSE_CLICKED,event -> {
+        rootp.addEventHandler(MouseEvent.MOUSE_CLICKED,event -> {
             //loadRegister(event);
             Parent root= null;
             try {
