@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="tools">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/Downloads/m.sundt-javarosa-054cd1ec5507/core/tools/ant-contrib-0.6.jar!/" />
+      <root url="jar://$USER_HOME$/Downloads/m.sundt-javarosa-054cd1ec5507/core/tools/UmlGraph.jar!/" />
+      <root url="jar://$USER_HOME$/Downloads/m.sundt-javarosa-054cd1ec5507/core/tools/junit-3.8.2.jar!/" />
+      <root url="jar://$USER_HOME$/Downloads/m.sundt-javarosa-054cd1ec5507/core/tools/javarosa-ant-libs.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

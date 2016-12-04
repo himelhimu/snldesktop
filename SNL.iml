@@ -7,7 +7,10 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="jfoenix" level="project" />
-    <orderEntry type="library" name="sqlite-jdbc-3.15.1" level="project" />
+    <orderEntry type="library" exported="" name="jfoenix" level="project" />
+    <orderEntry type="library" exported="" name="sqlite-jdbc-3.15.1" level="project" />
+    <orderEntry type="module" module-name="core" exported="" />
+    <orderEntry type="module" module-name="org.javarosa.xform.validator" exported="" />
+    <orderEntry type="module" module-name="schema-gen" exported="" />
   </component>
 </module>

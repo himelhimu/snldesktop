@@ -2,6 +2,7 @@ package register;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextField;
+import com.sun.deploy.net.HttpResponse;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -12,6 +13,7 @@ import javafx.scene.control.Dialog;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import org.javarosa.form.api.FormEntryController;
 
 import javax.swing.*;
 import java.awt.*;
@@ -30,7 +32,7 @@ public class LogInController implements Initializable {
 
     Dialog dialog;
 
-    public static final String URL="https://demo.mpower-social.com:8001";
+    public static final String URL="http://demo.mpower-social.com:8001";
     @FXML
     public JFXButton loginSubmit;
     @FXML
@@ -44,6 +46,7 @@ public class LogInController implements Initializable {
     public  MouseEvent mouseEvent;
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+
 
         loginSubmit.addEventHandler(MouseEvent.MOUSE_CLICKED,event -> {
             mouseEvent=event;
@@ -83,11 +86,27 @@ public class LogInController implements Initializable {
 
             url=new URL(URL);
             httpURLConnection= (HttpURLConnection) url.openConnection();
+            httpURLConnection.connect();
+
+            int httpResponse=httpURLConnection.getResponseCode();
+
+            if (httpResponse==200)
+            {
+                showMessage();
+            }
+
             if (userName.equalsIgnoreCase("himel") || password.equalsIgnoreCase("1234")) showHomePage();
             else showError();
             return null;
 
         }
+    }
+
+    private void showMessage() {
+        Alert alert=new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Web Response");
+        alert.setHeaderText("Response");
+        alert.showAndWait();
     }
 
     private void showError() {

@@ -3,6 +3,9 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/SNL.iml" filepath="$PROJECT_DIR$/SNL.iml" />
+      <module fileurl="file://$USER_HOME$/Downloads/m.sundt-javarosa-054cd1ec5507/core/core.iml" filepath="$USER_HOME$/Downloads/m.sundt-javarosa-054cd1ec5507/core/core.iml" />
+      <module fileurl="file://$USER_HOME$/Downloads/m.sundt-javarosa-054cd1ec5507/util/validator/org.javarosa.xform.validator/org.javarosa.xform.validator.iml" filepath="$USER_HOME$/Downloads/m.sundt-javarosa-054cd1ec5507/util/validator/org.javarosa.xform.validator/org.javarosa.xform.validator.iml" />
+      <module fileurl="file://$USER_HOME$/Downloads/m.sundt-javarosa-054cd1ec5507/util/schema-gen/schema-gen.iml" filepath="$USER_HOME$/Downloads/m.sundt-javarosa-054cd1ec5507/util/schema-gen/schema-gen.iml" />
     </modules>
   </component>
 </project>

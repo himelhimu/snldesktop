@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="ant-contrib">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/Downloads/javarosa-dependencies-r3073/j2me/buildfiles/tools/ant-contrib.jar!/" />
+      <root url="jar://$USER_HOME$/Downloads/javarosa-dependencies-r3073/j2me/buildfiles/tools/javarosa-ant-libs.jar!/" />
+      <root url="jar://$USER_HOME$/Downloads/javarosa-dependencies-r3073/j2me/buildfiles/tools/UmlGraph.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

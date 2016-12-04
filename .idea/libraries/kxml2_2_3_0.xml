@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="kxml2-2.3.0">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/Downloads/javarosa-dependencies-r3073/lib/kxml2-2.3.0.jar!/" />
+      <root url="jar://$USER_HOME$/Downloads/javarosa-dependencies-r3073/lib/j2meunit-javarosa.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
